@@ -1,0 +1,35 @@
+[2023-06-26 21:05:07,204] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: elt_reddit_pipeline.copy_to_redshift scheduled__2023-06-26T20:50:00+00:00 [queued]>
+[2023-06-26 21:05:07,210] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: elt_reddit_pipeline.copy_to_redshift scheduled__2023-06-26T20:50:00+00:00 [queued]>
+[2023-06-26 21:05:07,211] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-26 21:05:07,211] {taskinstance.py:1357} INFO - Starting attempt 2 of 2
+[2023-06-26 21:05:07,211] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-26 21:05:07,220] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): copy_to_redshift> on 2023-06-26 20:50:00+00:00
+[2023-06-26 21:05:07,224] {standard_task_runner.py:52} INFO - Started process 7523 to run task
+[2023-06-26 21:05:07,227] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'elt_reddit_pipeline', 'copy_to_redshift', 'scheduled__2023-06-26T20:50:00+00:00', '--job-id', '38', '--raw', '--subdir', 'DAGS_FOLDER/elt_reddit_pipeline.py', '--cfg-path', '/tmp/tmp7n1u_3k3', '--error-file', '/tmp/tmpvrcr2g6r']
+[2023-06-26 21:05:07,228] {standard_task_runner.py:80} INFO - Job 38: Subtask copy_to_redshift
+[2023-06-26 21:05:07,275] {task_command.py:370} INFO - Running <TaskInstance: elt_reddit_pipeline.copy_to_redshift scheduled__2023-06-26T20:50:00+00:00 [running]> on host e5f9599bf06c
+[2023-06-26 21:05:07,327] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=elt_reddit_pipeline
+AIRFLOW_CTX_TASK_ID=copy_to_redshift
+AIRFLOW_CTX_EXECUTION_DATE=2023-06-26T20:50:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-06-26T20:50:00+00:00
+[2023-06-26 21:05:07,329] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2023-06-26 21:05:07,330] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'python /opt/***/extraction/upload_aws_redshift_etl.py 20230626']
+[2023-06-26 21:05:07,341] {subprocess.py:85} INFO - Output:
+[2023-06-26 21:05:07,485] {subprocess.py:92} INFO - Unable to connect to Redshift. Error could not translate host name "Anmol_reddit_hostname" to address: Name or service not known
+[2023-06-26 21:05:07,486] {subprocess.py:92} INFO - 
+[2023-06-26 21:05:07,491] {subprocess.py:96} INFO - Command exited with return code 1
+[2023-06-26 21:05:07,505] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 195, in execute
+    f'Bash command failed. The command returned a non-zero exit code {result.exit_code}.'
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-06-26 21:05:07,508] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=elt_reddit_pipeline, task_id=copy_to_redshift, execution_date=20230626T205000, start_date=20230626T210507, end_date=20230626T210507
+[2023-06-26 21:05:07,515] {standard_task_runner.py:97} ERROR - Failed to execute job 38 for task copy_to_redshift (Bash command failed. The command returned a non-zero exit code 1.; 7523)
+[2023-06-26 21:05:07,527] {local_task_job.py:156} INFO - Task exited with return code 1
+[2023-06-26 21:05:07,554] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

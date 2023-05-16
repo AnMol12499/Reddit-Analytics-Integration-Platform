@@ -1,0 +1,27 @@
+[2023-06-26 20:20:02,678] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: elt_reddit_pipeline.upload_to_s3 scheduled__2023-06-26T20:10:00+00:00 [queued]>
+[2023-06-26 20:20:02,684] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: elt_reddit_pipeline.upload_to_s3 scheduled__2023-06-26T20:10:00+00:00 [queued]>
+[2023-06-26 20:20:02,685] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-26 20:20:02,685] {taskinstance.py:1357} INFO - Starting attempt 1 of 2
+[2023-06-26 20:20:02,686] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-26 20:20:02,694] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): upload_to_s3> on 2023-06-26 20:10:00+00:00
+[2023-06-26 20:20:02,698] {standard_task_runner.py:52} INFO - Started process 5195 to run task
+[2023-06-26 20:20:02,702] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'elt_reddit_pipeline', 'upload_to_s3', 'scheduled__2023-06-26T20:10:00+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/elt_reddit_pipeline.py', '--cfg-path', '/tmp/tmpuddndgh1', '--error-file', '/tmp/tmpjnmsw2x1']
+[2023-06-26 20:20:02,704] {standard_task_runner.py:80} INFO - Job 20: Subtask upload_to_s3
+[2023-06-26 20:20:02,753] {task_command.py:370} INFO - Running <TaskInstance: elt_reddit_pipeline.upload_to_s3 scheduled__2023-06-26T20:10:00+00:00 [running]> on host e5f9599bf06c
+[2023-06-26 20:20:02,802] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=elt_reddit_pipeline
+AIRFLOW_CTX_TASK_ID=upload_to_s3
+AIRFLOW_CTX_EXECUTION_DATE=2023-06-26T20:10:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-06-26T20:10:00+00:00
+[2023-06-26 20:20:02,804] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2023-06-26 20:20:02,805] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'python /opt/***/extraction/upload_aws_s3_etl.py 20230626']
+[2023-06-26 20:20:02,814] {subprocess.py:85} INFO - Output:
+[2023-06-26 20:20:03,968] {subprocess.py:96} INFO - Command exited with return code 0
+[2023-06-26 20:20:03,994] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=elt_reddit_pipeline, task_id=upload_to_s3, execution_date=20230626T201000, start_date=20230626T202002, end_date=20230626T202003
+[2023-06-26 20:20:04,037] {local_task_job.py:156} INFO - Task exited with return code 0
+[2023-06-26 20:20:04,066] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check
