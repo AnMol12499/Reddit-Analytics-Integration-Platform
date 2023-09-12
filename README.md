@@ -41,6 +41,9 @@ First clone the repository into your home directory and follow the steps.
   git clone https://github.com/AnMol12499/Reddit-Analytics-Integration-Platform.git
   ```
 
+### Getting Started
+To begin using the project, follow these steps:
+
 1. [Overview](instructions/overview.md)
 1. [Reddit API Configuration](instructions/reddit.md)
 1. [AWS Account](instructions/aws.md)
@@ -51,3 +54,10 @@ First clone the repository into your home directory and follow the steps.
 1. [Dashboard](instructions/visualisation.md)
 1. [Final Notes & Termination](instructions/terminate.md)
 1. [Improvements](instructions/improvements.md)
+
+
+## More Details
+
+Project Structure: The project's structure includes directories for infrastructure (Terraform), configuration (AWS and Airflow), data extraction (Python scripts), and optional steps like dbt and BI tools integration.
+
+Customization: Feel free to customize the project by modifying configurations, adding new data sources, or integrating additional tools as needed.
